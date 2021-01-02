@@ -1,0 +1,70 @@
+post  http://localhost:4000/user/sign-up
+Content-Type: application/json
+
+{
+    "firstname" : "deepak",
+    "lastname"  : "raja",
+    "email"     : "dip@gmail.com",
+    "password"  : "mu12" 
+}
+
+###
+
+post  http://localhost:4000/user/login
+Content-Type: application/json
+
+{
+    "email" : "deepak@gmail.com",
+    "password" : "mu12" 
+}
+###
+post  http://localhost:4000/user/profile
+Content-Type: application/json
+
+{
+    "email":"dkboss12333@gmail.com"
+}
+###
+
+post  http://localhost:4000/user/login-jwt
+Content-Type: application/json
+
+{
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlZXAxMjEyMUBnbWFpbC5jb20iLCJpYXQiOjE1OTkxOTM4MzIsImV4cCI6MTU5OTM2NjYzMiwiaXNzIjoibG9jYWxob3N0OjQwMDAifQ.5TwN21Zv4VULanYd4K3EO617O1Ey_yW1JFNfJuqCU8E",
+    "post_id" : "5f7b097871577620d4bec3f0J"
+}
+
+###
+get http://localhost:4000/posts/get-post
+
+###
+put http://localhost:4000/posts/react-true
+Content-Type: application/json
+
+{
+    "email" : "deepak@gmail.com",
+    "postId": "xyz"
+}
+
+
+###
+get http://localhost:4000/profile_pics/profile_pic1262292330650.jpg
+
+
+###
+post http://localhost:4000/user/get-notifications
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRpcHBha0BnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjEyNjIyOTAyNjMsImV4cCI6MTI2MjQ2MzA2MywiaXNzIjoibG9jYWxob3N0OjQwMDAifQ.eLBX_NA9xMK_iekZ1EfUNHoH26ZJCx7rLXOVMDShLQE
+
+{
+    
+}
+
+
+###
+post http://localhost:4000/user/get-queries
+Content-Type: application/json
+
+{
+    "isAdmin" : true,
+    "skip"  : 0
+}
