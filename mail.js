@@ -2,13 +2,13 @@ var nodemailer = require('nodemailer');
 
 exports.buildPasswordChangeLink = function(newHash){
   let emailBody = `<h2><center> Hello FactChecker <center></h2><h3Please click on the link below to change your password</h3>
-  <a href='http://localhost:4200/#/change-forgotten-password?hash=${newHash}'>click here to change password</a>`;  
+  <a href='${process.env.frontend}#/change-forgotten-password?hash=${newHash}'>click here to change password</a>`;  
   return emailBody; 
 }
 
 exports.buildLink = function(hash){
     var emailBody = "<h2><center> Hello FactChecker <center></h2><h3>Please click on the link below to verify your account</h3>";
-    emailBody = emailBody + "<a href='http://localhost:4200/#/verify-account?hash=" + hash + "'>click here to verify</a>";
+    emailBody = emailBody + "<a href='" + process.env.frontend + "#/verify-account?hash=" + hash + "'>click here to verify</a>";
     return emailBody;
 }
 
@@ -24,8 +24,9 @@ exports.sendMail = async function(from, to, subject,  htmlmsg){
             auth:
             {
              
-              user: "sonyriyargi752@gmail.com",
-              pass : "*dTyf_HtmB!69*"
+              user:process.env.user,
+              pass:process.env.pass
+    
             }
         }
       );

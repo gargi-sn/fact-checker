@@ -38,9 +38,6 @@ MIT
 @angular/router
 MIT
 
-@tinymce/tinymce-angular
-Apache-2.0
-
 bootstrap
 MIT
 The MIT License (MIT)

@@ -15,7 +15,7 @@ class SendMailClass{
   }
 
   async buildContent(){
-    this.emailBody = "<h2><center> Hello FactChecker <center><h2><h3>These are some of the fake news busters of this week</h3><a href='http://localhost:4200/#/news?date=" + new Date(Date.now()).toISOString() + ">click here to check</a>";
+    this.emailBody = "<h2><center> Hello FactChecker <center><h2><h3>These are some of the fake news busters of this week</h3><a href='" + process.env.frontend + "/#/news?date=" + new Date(Date.now()).toISOString() + ">click here to check</a>";
     this.emails = await dbusers.find({}).select("email");
   }
   

@@ -19,7 +19,7 @@ const MONGO_URL = config.MONGO_URL;
 const PORT = config.PORT;
 const db = config.DB_NAME; 
 
-mongoose.connect(MONGO_URL, {useUnifiedTopology: true, useNewUrlParser:true});
+mongoose.connect(MONGO_URL + db, {useUnifiedTopology: true, useNewUrlParser:true});
 const connection = mongoose.connection;
 connection.once("open", function() {
   console.log("MongoDB database connection established successfully");
@@ -46,6 +46,6 @@ app.use('/posts', postRouter);
 app.use('/comments', commentRouter);
 
 
-app.listen(PORT, ()=>{
+app.listen(process.env.PORT || 4000, ()=>{
     console.log("server started at " + PORT);
-})
+});

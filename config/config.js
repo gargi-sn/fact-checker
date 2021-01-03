@@ -1,6 +1,6 @@
 module.exports = {
-    PORT : 4000,
-    HOST : "http://localhost:4000/", 
+    PORT:4000,
+    HOST:"https://fact-checc.herokuapp.com/", 
     MONGO_URL : process.env.MONGO_URL,
     DB_NAME   : process.env.DB_NAME,
     production : function(){
